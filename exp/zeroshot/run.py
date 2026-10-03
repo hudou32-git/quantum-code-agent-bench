@@ -1,4 +1,4 @@
-"""oneshot baseline arm entry. Run from submit/: python3 -m exp.oneshot.run"""
+"""zero-shot baseline arm entry. Run from submit/: python3 -m exp.zeroshot.run"""
 
 from __future__ import annotations
 
@@ -6,11 +6,11 @@ import argparse
 
 from exp.common.baseline.runner import run_e4_base
 
-ARM = "oneshot"
+ARM = "zeroshot"
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=f"oneshot baseline arm (v6, pass@k, no system prompt)")
+    ap = argparse.ArgumentParser(description=f"zero-shot baseline arm (v6, pass@k, no system prompt)")
     ap.add_argument("--bench", default="qhe", choices=["qhe", "qbplus"])
     ap.add_argument("--dev", action="store_true")
     ap.add_argument("--workers", type=int, default=None)

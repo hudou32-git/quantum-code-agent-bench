@@ -30,7 +30,7 @@
 
 | 层级 | 实验臂 | 交互能力 |
 |---|---|---|
-| 静态单轮（pass@3 三次独立采样） | `oneshot`、`cot`、`qscot`、`rag` | 不利用当前候选程序的执行反馈；`rag` 在首次生成时注入三层知识库检索 |
+| 静态单轮（pass@3 三次独立采样） | `zeroshot`（zero-shot）、`cot`、`qscot`、`rag` | 不利用当前候选程序的执行反馈；`rag` 在首次生成时注入三层知识库检索 |
 | 被动反馈环（≤3 次提交） | `loop`、`loop_cot`、`loop_qscot`、`loop_rag` | 首次生成与对应静态臂逐字节一致，失败后接收官方错误回灌修订，不能主动探索环境 |
 | 执行式智能体 | **E0** | ReAct 风格工具环（沙盒 `Shell` 主动取证 → `Write` 候选 → `Eval` 官方评测），内建 Z0 执行卫生层（探查硬预算、重试熔断、残码提交门、名额兜底） |
 | 干预阶梯 | **E1–E4** | E0 之上按预注册顺序累积叠加：Z1 结构化取证（E1）、Z2 交互治理（E2）、Z3 接口契约修复（E3）、Z4 语义对照（E4） |
@@ -59,7 +59,7 @@
 │   ├── qhe/                         #   Qiskit-HumanEval local_hard（143 题；sealed/ 为隐藏测试）
 │   └── qbplus/                      #   QuanBench+ Qiskit 子集（42 题）
 ├── exp/                             # 实验代码（每臂一个包，run.py 为入口；exp/config.py 为中心配置）
-│   ├── oneshot/ cot/ qscot/ rag/            # 静态单轮臂（rag/ 内含三层知识库 kb/）
+│   ├── zeroshot/ cot/ qscot/ rag/          # 静态单轮臂（zeroshot 即 zero-shot；rag/ 内含三层知识库 kb/）
 │   ├── loop/ loop_cot/ loop_qscot/ loop_rag/ # 被动反馈环臂
 │   ├── d5conv/                      #   E0 运行器（ReAct 式工具环，react_e0 模式）
 │   ├── fcea/                        #   E1–E4 运行器（deurq_z1 / deurq_base /
@@ -78,8 +78,8 @@
 `--workers` 控制并发）：
 
 ```bash
-# 静态单轮臂（oneshot / cot / qscot / rag 同构）
-python -m exp.oneshot.run --bench qhe
+# 静态单轮臂（zeroshot / cot / qscot / rag 同构）
+python -m exp.zeroshot.run --bench qhe
 python -m exp.rag.run --bench qbplus      # rag 臂需在 .env 配置 RAGFlow 服务
 
 # 被动反馈环臂（loop / loop_cot / loop_qscot / loop_rag 同构）

@@ -3,7 +3,7 @@
 - loop arm: optional feedback rounds (generate -> official eval -> official
   QuanBench+ feedback template: attempt framing + error + repair instruction
   + code echo -> full rewrite), MAX_OFFICIAL=3.
-- passk arms (oneshot/cot/qscot/rag): PASS_K independent samples per problem,
+- passk arms (zeroshot/cot/qscot/rag): PASS_K independent samples per problem,
   a fresh conversation per sample, no feedback between samples; the problem
   passes if any sample passes (pass@k, user directive 2026-09-17).
 No tools anywhere."""
@@ -226,7 +226,7 @@ def run_base_task(
         "pass_k": n_samples if sampling else 1,
         "first_shot_prompt": (
             FIRST_SHOT_OF.get(a)
-            or ("base" if a in {"oneshot", "loop"} else a)
+            or ("base" if a in {"zeroshot", "loop"} else a)
         ),
         "n_samples_passed": sum(1 for s in shots if s["passed"]) if sampling else int(passed),
         "decoding_temperature": float(getattr(client, "temperature", DECODING_TEMPERATURE)),

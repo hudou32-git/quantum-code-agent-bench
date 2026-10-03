@@ -55,7 +55,7 @@ def first_user(arm: str, case: dict[str, Any], *, rag_block: str = "") -> str:
     # shot — the delegation below is what guarantees that by construction.
     if a in FIRST_SHOT_OF:
         return first_user(FIRST_SHOT_OF[a], case, rag_block=rag_block)
-    if a in {"oneshot", "loop"}:
+    if a in {"zeroshot", "loop"}:
         return spec_user(prompt)
     if a == "cot":
         return spec_user(prompt) + "\n\n" + ZS_INSTRUCTION.strip() + FENCE_TAIL

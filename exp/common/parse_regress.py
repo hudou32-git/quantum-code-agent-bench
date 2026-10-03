@@ -27,6 +27,8 @@ from exp.common.parse import extract_module, extract_module_v2
 from exp.common.parse_v3 import extract_module_v3
 
 _XDIR = Path(__file__).resolve().parents[2] / "docs" / "results" / "xfix_20260915"
+# v4 archive filenames are frozen history: the first static arm kept its legacy
+# name "oneshot" there and must not follow the 2026-10-03 arm rename (zeroshot).
 _ARMS = ("oneshot", "cot", "qscot", "rag", "loop")
 
 

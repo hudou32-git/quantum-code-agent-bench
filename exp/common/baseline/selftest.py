@@ -57,12 +57,12 @@ def test_model_and_tags() -> None:
         raise Failed(f"must refuse {locked}")
     if DECODING_TEMPERATURE != TEMPERATURE or TEMPERATURE != 0.6:
         raise Failed(f"v6 decoding pin drifted: config={TEMPERATURE} baseline={DECODING_TEMPERATURE}")
-    if PASS_K != 3 or PASSK_ARMS != {"oneshot", "cot", "qscot", "rag"}:
+    if PASS_K != 3 or PASSK_ARMS != {"zeroshot", "cot", "qscot", "rag"}:
         raise Failed((PASS_K, sorted(PASSK_ARMS)))
     if default_tag("loop", bench="qbplus") != "e4_base_v8_loop_qbplus":
         raise Failed(default_tag("loop", bench="qbplus"))
-    if default_tag("oneshot") != "e4_base_v8_passk3_oneshot":
-        raise Failed(default_tag("oneshot"))
+    if default_tag("zeroshot") != "e4_base_v8_passk3_zeroshot":
+        raise Failed(default_tag("zeroshot"))
     if default_tag("qscot", dev=True) != "e4_base_v8_passk3_qscot_dev":
         raise Failed(default_tag("qscot", dev=True))
     if default_tag("cot", bench="qbplus", pass_k=1) != "e4_base_v8_passk1_cot_qbplus":
@@ -72,10 +72,10 @@ def test_model_and_tags() -> None:
     if default_tag("loop_rag", bench="qbplus", dev=True) != "e4_base_v8_loop_rag_qbplus_dev":
         raise Failed(default_tag("loop_rag", bench="qbplus", dev=True))
     if set(normalize_arm(a) for a in (
-        "oneshot", "cot", "qscot", "rag", "loop",
+        "zeroshot", "cot", "qscot", "rag", "loop",
         "loop_cot", "loop_qscot", "loop_rag",
     )) != {
-        "oneshot",
+        "zeroshot",
         "cot",
         "qscot",
         "rag",
@@ -95,9 +95,9 @@ def test_prompts() -> None:
         "benchmark": "qhe",
         "framework": "qiskit",
     }
-    oneshot = first_user("oneshot", case)
-    if "Public specification:" not in oneshot or "```python" not in oneshot:
-        raise Failed(oneshot[:200])
+    zeroshot = first_user("zeroshot", case)
+    if "Public specification:" not in zeroshot or "```python" not in zeroshot:
+        raise Failed(zeroshot[:200])
     cot = first_user("cot", case)
     if "think step by step" not in cot.lower():
         raise Failed(cot[:200])
@@ -113,7 +113,7 @@ def test_prompts() -> None:
     )
     if "retrieved_knowledge" not in rag:
         raise Failed(rag[:200])
-    for text in (oneshot, cot, qscot, rag):
+    for text in (zeroshot, cot, qscot, rag):
         if "check(" in text or "sealed" in text or "canonical_output" in text:
             raise Failed("leak")
         if "```python" not in text and "python fence" not in text.lower():
@@ -299,9 +299,9 @@ def test_passk_engine() -> None:
             row = run_base_task(
                 "qiskitHumanEval/15",
                 client,
-                arm="oneshot",
+                arm="zeroshot",
                 bench="qhe",
-                tag="e4_base_v8_passk3_oneshot_selftest",
+                tag="e4_base_v8_passk3_zeroshot_selftest",
                 results_root=Path(td),
                 pass_k=3,
             )
@@ -341,9 +341,9 @@ def test_passk_engine() -> None:
             row2 = run_base_task(
                 "qiskitHumanEval/15",
                 client2,
-                arm="oneshot",
+                arm="zeroshot",
                 bench="qhe",
-                tag="e4_base_v8_passk3_oneshot_selftest",
+                tag="e4_base_v8_passk3_zeroshot_selftest",
                 results_root=Path(td),
                 pass_k=3,
             )
@@ -387,7 +387,7 @@ def test_passk_summary() -> None:
     def row(case_id: str, outcomes: list[bool], ext: str = "ok") -> dict:
         return {
             "case_id": case_id,
-            "arm": "ONESHOT",
+            "arm": "ZEROSHOT",
             "passed": any(outcomes),
             "pass_fail": "PASS" if any(outcomes) else "FAIL",
             "llm_calls": len(outcomes),
@@ -412,8 +412,8 @@ def test_passk_summary() -> None:
         s = build_summary(
             ids=["a", "b", "c"],
             rows=rows,
-            tag="e4_base_v8_passk3_oneshot_selftest",
-            arm="oneshot",
+            tag="e4_base_v8_passk3_zeroshot_selftest",
+            arm="zeroshot",
             bench="qhe",
             out_path=Path(td) / "t.jsonl",
             n_workers=1,

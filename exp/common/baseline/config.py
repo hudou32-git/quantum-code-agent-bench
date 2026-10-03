@@ -18,8 +18,8 @@ MODEL = resolve_model()
 MODEL_FAMILY = MODEL
 LLM_PROVIDER = "deepseek"
 MAX_OFFICIAL = 3
-ARMS = ("oneshot", "cot", "qscot", "rag", "loop", "loop_cot", "loop_qscot", "loop_rag")
-SINGLE_TURN = frozenset({"oneshot", "cot", "qscot", "rag"})
+ARMS = ("zeroshot", "cot", "qscot", "rag", "loop", "loop_cot", "loop_qscot", "loop_rag")
+SINGLE_TURN = frozenset({"zeroshot", "cot", "qscot", "rag"})
 # v6 loop family: adaptive EF×3 schedule. loop_X arms change ONLY the first
 # shot's prompt — byte-identical to arm X's first shot — while rounds 2-3 use
 # the standard typed-error feedback rounds unchanged (user directive, 2026-09-17).
@@ -27,7 +27,7 @@ LOOP_FAMILY = frozenset({"loop", "loop_cot", "loop_qscot", "loop_rag"})
 FIRST_SHOT_OF = {"loop_cot": "cot", "loop_qscot": "qscot", "loop_rag": "rag"}
 # v6: single-turn arms sample PASS_K independent solutions per problem
 # (pass@k: any sample passing the official eval makes the problem pass).
-PASSK_ARMS = frozenset({"oneshot", "cot", "qscot", "rag"})
+PASSK_ARMS = frozenset({"zeroshot", "cot", "qscot", "rag"})
 PASS_K = 3
 # v7 (user directive, 2026-09-20): unified e7 protocol — T=0.6, max_tokens=40960,
 # thinking disabled, conda-qhe grading (conda_qhe_spawn). v6 rows ran at 4096
@@ -51,6 +51,8 @@ def normalize_arm(arm: str) -> str:
     a = (arm or "").strip().lower()
     if a in {"q-scot", "scot"}:
         a = "qscot"
+    if a in {"zero-shot", "zero_shot"}:
+        a = "zeroshot"
     if a not in ARMS:
         raise ValueError(f"unknown baseline arm {arm!r}; use one of {ARMS}")
     return a

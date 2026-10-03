@@ -84,7 +84,7 @@ def main() -> int:
         "--arms",
         nargs="*",
         default=[
-            "oneshot",
+            "zeroshot",
             "cot",
             "qscot",
             "rag",
