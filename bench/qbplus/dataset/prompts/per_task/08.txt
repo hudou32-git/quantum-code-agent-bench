@@ -1,0 +1,9 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
+from math import pi
+
+def qft_6() ->QuantumCircuit: 
+
+    """
+        Implement a 6 qubit quantum fourier transform circuit, and return the QuantumCircuit after measure all qubits.
+    """

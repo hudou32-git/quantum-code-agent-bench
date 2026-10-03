@@ -1,0 +1,7 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
+def decompose_CNOT() ->QuantumCircuit: 
+    
+    """
+        Decompose CNOT gate use Hadmard gate and CZ gate. Return the QuantumCircuit without measure.
+    """

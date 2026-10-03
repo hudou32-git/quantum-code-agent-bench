@@ -1,0 +1,16 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
+from qiskit.circuit.library import U3Gate
+from qiskit.circuit import ParameterVector
+import numpy as np
+def VQE_2(parameters) -> QuantumCircuit:
+    """
+    Prepares a double-qubit variational quantum state based on input parameters. This function constructs a parameterized ansatz circuit to find the eigenvalue of the observable.
+    Args:
+        parameters (list or array-like): A list of 8 real-valued parameters:
+            - parameters[0–2]: RZ, RZ, RY rotations on qubit 0
+            - parameters[3]:    RZ rotation on qubit 1
+            - parameters[4–6]: RZ, RZ, RY on qubit 0
+            - parameters[7]:    RZ rotation on qubit 1
+    Return the QuantumCircuit without measure.
+    """

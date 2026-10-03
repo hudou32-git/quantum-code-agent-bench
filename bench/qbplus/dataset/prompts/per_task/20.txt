@@ -1,0 +1,8 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister
+
+def Bernstein_Vazirani_011() ->QuantumCircuit: 
+    """
+        Implement the Bernstein–Vazirani algorithm for a 3-bit hidden string a = '011'. 
+        Return the QuantumCircuit after measure all qubits.
+    """

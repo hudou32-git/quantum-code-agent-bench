@@ -1,0 +1,6 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumCircuit
+def reverse_state_preparation_bell() -> QuantumCircuit:
+    """
+        Build a circuit to uncompute the Bell state back to |00>. Return the QuantumCircuit after measurement.
+    """

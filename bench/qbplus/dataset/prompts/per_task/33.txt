@@ -1,0 +1,8 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister
+import numpy as np
+def ipe_s_gate() -> QuantumCircuit:
+    """
+        Implement an Iterative Phase Estimation (IPE) circuit to estimate the phase of the S gate, using 2 iterations.
+        Return the QuantumCircuit with measurements.
+    """

@@ -1,0 +1,20 @@
+{
+  "migrated_utc": "2026-08-10T09:48:10Z",
+  "source_repo": "/root/cyy/llm_code/quanbench-plus",
+  "framework": "qiskit",
+  "n_tasks": 42,
+  "n_with_unittest_from_qb117": 42,
+  "n_with_canonical_output": 42,
+  "categories": [
+    "DECOMPOSITION",
+    "QUANTUM_ALGO",
+    "STATE_PREPARATION"
+  ],
+  "eval_files_copied": {
+    "qiskit_pip": 3,
+    "feedback_loop": 12,
+    "utils": 13
+  },
+  "authoritative_grade": "KL(model_probs, canonical_output) via quanbench-plus qiskit_pip",
+  "relation_to_quanbench117": "task_id set is a 42-task subset of quanbench117; prompts may differ slightly (QB+ adds NL instruction prefix)."
+}

@@ -1,0 +1,7 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister
+
+def Hadmard_Test_h() ->QuantumCircuit: 
+    """
+        Implement a 2 qubit Hadmard test quantum circuit for |+> state, return the QuantumCircuit after measure the ancilla qubit.
+    """

@@ -1,0 +1,8 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister
+from numpy import pi
+def Quantum_Teleportation() ->QuantumCircuit: 
+    """
+        Implement a 3 qubits Quantum_Teleportation, Alice own Qubit 0 and Qubit 1, Bob own Qubit2. Alice's initial state is rotated by angle pi/2 around the X axis. 
+        Return QuantumCircuit after just measure Bob's qubit.
+    """

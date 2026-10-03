@@ -1,0 +1,6 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister
+def QSub() ->QuantumCircuit: 
+    """
+        Implement a 3 qubits quantum subtractor for a = 111, b = 011. Return the QuantumCircuit after measure the result qubits.
+    """

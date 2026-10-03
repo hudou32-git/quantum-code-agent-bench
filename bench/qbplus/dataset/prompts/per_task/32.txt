@@ -1,0 +1,8 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumCircuit
+import numpy as np
+def shor_7mod15()->QuantumCircuit:
+    """
+        Design a quantum circuit that implentment a shor's algorithm to solve 7 mod 15, Use a 8 qubits for the phase register and 4 qubits for the modular exponentiation.
+        Return the Quantum Circuit after measuring phase register.
+    """

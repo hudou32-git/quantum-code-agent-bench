@@ -1,0 +1,10 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister
+
+def Simon_110() ->QuantumCircuit: 
+    """
+        Implement a quantum circuit using Simon's algorithm for the case:
+            - The input bit length n = 3
+            - The hidden string s = '110'
+        Return the QuantumCircuit after measure qubits about s.
+    """

@@ -1,0 +1,8 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
+def qpe_grover00_gate(n_count=3) ->QuantumCircuit: 
+    
+    """
+        Use Grover’s algorithm to mark state |00⟩, then apply a 3 qubits Quantum Phase Estimation using the Grover operator as the unitary.
+        Return the QuantumCircuit after measure on first 3 qubits only.
+    """

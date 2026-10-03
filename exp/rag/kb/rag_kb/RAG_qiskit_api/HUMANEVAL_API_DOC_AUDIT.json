@@ -1,0 +1,108 @@
+{
+  "api_dir": "op/RAG_qiskit_api",
+  "total_md_files": 518,
+  "qiskit_version_label": "2.4.1 (per page header)",
+  "rules": [
+    {
+      "id": "legacy_execute_aer_ibm",
+      "title_zh": "0.x 风格 import/执行（HumanEval 会判错）",
+      "action_default": "若命中则删改示例；当前库内多为零命中"
+    },
+    {
+      "id": "fake_provider_generic",
+      "title_zh": "FakeBackendV2 / FakeProvider 泛化名",
+      "action_default": "改为 FakeBelemV2 等具体机名说明"
+    },
+    {
+      "id": "runtime_service_cloud",
+      "title_zh": "QiskitRuntimeService / 真机账号",
+      "action_default": "本地评测集应标注「仅云端」或勿入库"
+    },
+    {
+      "id": "primitives_vs_runtime_sampler",
+      "title_zh": "qiskit.primitives 与 HumanEval 的 runtime Sampler 不一致",
+      "action_default": "保留为官方 API，但检索到 Sampler 题时易误导；建议增补 runtime 对照页或降权"
+    },
+    {
+      "id": "sampler_wrong_ctor",
+      "title_zh": "Sampler(backend=/simulator= 构造（非 mode=）",
+      "action_default": "改为 Sampler(mode=...) + SamplerOptions"
+    },
+    {
+      "id": "primitive_result_legacy",
+      "title_zh": "quasi_dists / 旧 Primitive 结果字段",
+      "action_default": "改为 result[i].data.meas.get_counts() 等"
+    },
+    {
+      "id": "run_without_list",
+      "title_zh": "sampler.run(circuit) 未包列表",
+      "action_default": "改为 run([circuit])"
+    },
+    {
+      "id": "wrong_import_symbols",
+      "title_zh": "错误符号名（QFT / QFT 旧名等）",
+      "action_default": "与 dataset import 对齐"
+    },
+    {
+      "id": "legacy_providers_job",
+      "title_zh": "qiskit.providers JobV1 / basic_provider 路径",
+      "action_default": "易与 AerSimulator + runtime 混淆；可标注「非 HumanEval 主路径」"
+    },
+    {
+      "id": "qc_to_operator_hallucination",
+      "title_zh": "QuantumCircuit.to_operator（模型幻觉；官方为 Pauli.to_operator）",
+      "action_default": "强调 Operator(qc)"
+    }
+  ],
+  "matches_by_rule": {
+    "fake_provider_generic": [
+      "HUMANEVAL_API_DOC_AUDIT.md"
+    ],
+    "legacy_providers_job": [
+      "HUMANEVAL_API_DOC_AUDIT.md",
+      "qiskit_providers_basic_provider_basic_provider_Backend.md",
+      "qiskit_providers_basic_provider_basic_provider_job_JobV1.md",
+      "qiskit_providers_basic_provider_basic_simulator_BackendV2.md",
+      "qiskit_providers_basic_provider_basic_simulator_Clifford.md",
+      "qiskit_providers_basic_provider_basic_simulator_Options.md",
+      "qiskit_providers_basic_provider_basic_simulator_StabilizerState.md",
+      "qiskit_providers_basic_provider_basic_simulator_Target.md",
+      "qiskit_providers_job_JobV1.md"
+    ],
+    "primitive_result_legacy": [
+      "HUMANEVAL_API_DOC_AUDIT.md"
+    ],
+    "primitives_vs_runtime_sampler": [
+      "HUMANEVAL_API_DOC_AUDIT.md",
+      "qiskit_primitives_backend_estimator_v2_BackendV2.md",
+      "qiskit_primitives_backend_estimator_v2_Options.md",
+      "qiskit_primitives_backend_estimator_v2_PassManager.md",
+      "qiskit_primitives_backend_estimator_v2_Pauli.md",
+      "qiskit_primitives_backend_estimator_v2_PauliList.md",
+      "qiskit_primitives_backend_sampler_v2_BackendV2.md",
+      "qiskit_primitives_backend_sampler_v2_Options.md",
+      "qiskit_primitives_base_base_estimator_Job.md",
+      "qiskit_primitives_base_base_estimator_Job_status.md",
+      "qiskit_primitives_base_base_estimator_SparsePauliOp.md",
+      "qiskit_primitives_base_base_primitive_v1_Options.md",
+      "qiskit_primitives_base_base_sampler_Job.md",
+      "qiskit_primitives_base_validation_v1_PauliList.md",
+      "qiskit_primitives_base_validation_v1_SparsePauliOp.md",
+      "qiskit_primitives_containers_bindings_array_Parameter.md",
+      "qiskit_primitives_containers_observables_array_Pauli.md",
+      "qiskit_primitives_containers_observables_array_PauliList.md",
+      "qiskit_primitives_containers_observables_array_SparsePauliOp.md",
+      "qiskit_primitives_statevector_estimator_SparsePauliOp.md"
+    ],
+    "qc_to_operator_hallucination": [
+      "HUMANEVAL_API_DOC_AUDIT.md"
+    ],
+    "runtime_service_cloud": [
+      "HUMANEVAL_API_DOC_AUDIT.md"
+    ],
+    "sampler_wrong_ctor": [
+      "HUMANEVAL_API_DOC_AUDIT.md"
+    ]
+  },
+  "missing_human_eval_stack_markers": []
+}

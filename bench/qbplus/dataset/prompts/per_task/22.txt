@@ -1,0 +1,7 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister
+
+def Qadd() ->QuantumCircuit: 
+    """
+        Implement a quantum Adder for a = 100, b = 001, and c0 = 1. Return the QuantumCircuit after measure the result qubits (4 qubits).
+    """

@@ -1,0 +1,2 @@
+Using a pass manager with optimization level as 1 and dense layout method, transpile and map a bell circuit for the Fake Oslo backend.
+You must implement this using a function named `transpile_circuit_dense` with no arguments.

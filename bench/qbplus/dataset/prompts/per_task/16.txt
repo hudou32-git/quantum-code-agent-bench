@@ -1,0 +1,7 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister
+
+def Bell_State() ->QuantumCircuit: 
+    """
+        Implement a quantum circuit with Bell State, return the QuantumCircuit after measure all qubits.
+    """

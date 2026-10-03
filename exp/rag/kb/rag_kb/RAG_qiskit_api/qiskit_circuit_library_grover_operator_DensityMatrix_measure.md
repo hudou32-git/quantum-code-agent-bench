@@ -1,0 +1,52 @@
+# Qiskit 2.4.1 API: `qiskit.circuit.library.grover_operator.DensityMatrix.measure`
+
+## 基本信息
+- Framework: Qiskit
+- Version: 2.4.1
+- Module: `qiskit.circuit.library.grover_operator`
+- API: `qiskit.circuit.library.grover_operator.DensityMatrix.measure`
+- Kind: `method`
+- Owner class: `DensityMatrix`
+
+## 一句话用途
+Measure subsystems and return outcome and post-measure state.
+
+## 功能说明
+Measure subsystems and return outcome and post-measure state.
+
+Note that this function uses the QuantumStates internal random
+number generator for sampling the measurement outcome. The RNG
+seed can be set using the :meth:`seed` method.
+
+Args:
+    qargs (list or None): subsystems to sample measurements for,
+                          if None sample measurement of all
+                          subsystems (Default: None).
+
+Returns:
+    tuple: the pair ``(outcome, state)`` where ``outcome`` is the
+           measurement outcome string label, and ``state`` is the
+           collapsed post-measurement state for the corresponding
+           outcome.
+
+## 函数签名
+```python
+(self, qargs: 'list | None' = None) -> 'tuple'
+```
+
+## 相关量子编程概念
+- density matrix
+- measurement
+- mixed state
+- state simulation
+- 密度矩阵
+
+## 检索标签
+- circuit_construction
+- measurement
+- quantum_info
+
+## 适合回答的问题
+- `qiskit.circuit.library.grover_operator.DensityMatrix.measure` 怎么用？
+- `measure` 的参数是什么？
+- Qiskit 2.4.1 中 `measure` 的最小示例是什么？

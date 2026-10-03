@@ -1,0 +1,2 @@
+Plot a city_state for a bell circuit.
+You must implement this using a function named `plot_circuit_layout_bell` with no arguments.

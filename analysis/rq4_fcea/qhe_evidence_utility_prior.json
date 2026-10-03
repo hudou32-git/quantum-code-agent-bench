@@ -1,0 +1,396 @@
+{
+ "name": "qhe_evidence_utility_prior",
+ "role": "FROZEN utility prior for RQ4 phase-1 FCEA (V2 global / V3 failure-conditioned)",
+ "frozen": true,
+ "discipline": "Built from QHE local_hard traces ONLY. QB+ tasks/results were not read. This file must not be edited after QB+ experiments run.",
+ "generated_at_utc": "2026-09-22T15:16:38+00:00",
+ "provenance": {
+  "source_dataset": [
+   {
+    "benchmark": "QHE-local-hard",
+    "path": "/root/cyy/llm_code/submit/exp/eqpa/results/e4_eqpa_40960_traces.jsonl",
+    "sha256": "75b9fbb85066e86aa829d8017c2002b4f1a54f4e0895ff1da17019c485886405",
+    "protocol": "e4_eqpa_40960 (T=0.6, max_tokens=40960, qiskit 2.4.1)",
+    "tasks": 143,
+    "repair_episodes": 109
+   }
+  ],
+  "excluded": [
+   "exp/eqpa/results/e4_eqpa_40960_qbplus_traces.jsonl (QB+ — never read)"
+  ],
+  "analyzer": "/root/cyy/llm_code/submit/analysis/rq2_evidence_utility/analyze.py",
+  "analyzer_sha256": "d7280386a58d4917247934831802c93f45401a3f5d27427cfeb8c581aa03b7b9",
+  "builder": "/root/cyy/llm_code/submit/analysis/rq4_fcea/build_prior.py",
+  "segmentation": "RQ2 analyzer segment_row (official-Eval delimited repair episodes)",
+  "bootstrap": {
+   "B": 2000,
+   "seed": 20260922
+  },
+  "min_cell_n_for_tiers": 5
+ },
+ "taxonomy": {
+  "E1": "Environment Evidence: framework/library/runtime facts (signatures, attributes, versions, import availability, source inspection). Answers: what is the correct API behavior?",
+  "E2": "Execution Evidence: feedback from executing candidate programs (eval/assert results, tracebacks, timeouts). Answers: does this program satisfy the target behavior?",
+  "E3": "Behavioral/Self-generated Evidence: model-designed experiments (simulate circuits, inspect counts, toy comparisons). Answers: which hypothesis about program behavior is correct?",
+  "E4": "Code/Context Evidence: re-reading files, prior code, task text."
+ },
+ "evidence_sample": {
+  "episodes_by_context": {
+   "Semantic": 63,
+   "Runtime": 19,
+   "Framework": 19,
+   "NoSubmit": 7,
+   "Other": 1
+  },
+  "classified_shell_actions": 474
+ },
+ "per_context": {
+  "Framework": {
+   "n_episodes": 19,
+   "base_recovery_rate": 0.4737,
+   "cells": {
+    "E1": {
+     "n_episodes": 11,
+     "n_recovered": 6,
+     "U_recovery": 0.5455,
+     "CI95": [
+      0.2727,
+      0.8182
+     ],
+     "avg_episode_llm_cost_est": 5.19,
+     "U_cost": 0.1052
+    },
+    "E2": {
+     "n_episodes": 5,
+     "n_recovered": 3,
+     "U_recovery": 0.6,
+     "CI95": [
+      0.2,
+      1.0
+     ],
+     "avg_episode_llm_cost_est": 7.18,
+     "U_cost": 0.0836
+    },
+    "E3": {
+     "n_episodes": 6,
+     "n_recovered": 2,
+     "U_recovery": 0.3333,
+     "CI95": [
+      0.0,
+      0.6667
+     ],
+     "avg_episode_llm_cost_est": 5.67,
+     "U_cost": 0.0588
+    },
+    "E4": {
+     "n_episodes": 0,
+     "n_recovered": 0,
+     "U_recovery": null,
+     "CI95": [
+      null,
+      null
+     ],
+     "avg_episode_llm_cost_est": null,
+     "U_cost": null
+    }
+   },
+   "ranking_eligible": [
+    "E2",
+    "E1",
+    "E3"
+   ],
+   "tiers": {
+    "E2": "HIGH",
+    "E1": "MEDIUM",
+    "E3": "LOW"
+   },
+   "recommended_evidence_types": [
+    "E2"
+   ]
+  },
+  "Semantic": {
+   "n_episodes": 63,
+   "base_recovery_rate": 0.3651,
+   "cells": {
+    "E1": {
+     "n_episodes": 30,
+     "n_recovered": 14,
+     "U_recovery": 0.4667,
+     "CI95": [
+      0.3,
+      0.6333
+     ],
+     "avg_episode_llm_cost_est": 10.57,
+     "U_cost": 0.0442
+    },
+    "E2": {
+     "n_episodes": 25,
+     "n_recovered": 9,
+     "U_recovery": 0.36,
+     "CI95": [
+      0.16,
+      0.56
+     ],
+     "avg_episode_llm_cost_est": 11.44,
+     "U_cost": 0.0315
+    },
+    "E3": {
+     "n_episodes": 28,
+     "n_recovered": 10,
+     "U_recovery": 0.3571,
+     "CI95": [
+      0.1786,
+      0.5357
+     ],
+     "avg_episode_llm_cost_est": 10.35,
+     "U_cost": 0.0345
+    },
+    "E4": {
+     "n_episodes": 5,
+     "n_recovered": 0,
+     "U_recovery": 0.0,
+     "CI95": [
+      0.0,
+      0.0
+     ],
+     "avg_episode_llm_cost_est": 11.67,
+     "U_cost": 0.0
+    }
+   },
+   "ranking_eligible": [
+    "E1",
+    "E2",
+    "E3",
+    "E4"
+   ],
+   "tiers": {
+    "E1": "HIGH",
+    "E2": "MEDIUM",
+    "E3": "MEDIUM",
+    "E4": "LOW"
+   },
+   "recommended_evidence_types": [
+    "E1"
+   ]
+  },
+  "Runtime": {
+   "n_episodes": 19,
+   "base_recovery_rate": 0.2632,
+   "cells": {
+    "E1": {
+     "n_episodes": 9,
+     "n_recovered": 4,
+     "U_recovery": 0.4444,
+     "CI95": [
+      0.1111,
+      0.7778
+     ],
+     "avg_episode_llm_cost_est": 9.67,
+     "U_cost": 0.046
+    },
+    "E2": {
+     "n_episodes": 5,
+     "n_recovered": 2,
+     "U_recovery": 0.4,
+     "CI95": [
+      0.0,
+      0.8
+     ],
+     "avg_episode_llm_cost_est": 10.55,
+     "U_cost": 0.0379
+    },
+    "E3": {
+     "n_episodes": 9,
+     "n_recovered": 4,
+     "U_recovery": 0.4444,
+     "CI95": [
+      0.1111,
+      0.7778
+     ],
+     "avg_episode_llm_cost_est": 9.86,
+     "U_cost": 0.0451
+    },
+    "E4": {
+     "n_episodes": 0,
+     "n_recovered": 0,
+     "U_recovery": null,
+     "CI95": [
+      null,
+      null
+     ],
+     "avg_episode_llm_cost_est": null,
+     "U_cost": null
+    }
+   },
+   "ranking_eligible": [
+    "E1",
+    "E3",
+    "E2"
+   ],
+   "tiers": {
+    "E1": "HIGH",
+    "E3": "MEDIUM",
+    "E2": "LOW"
+   },
+   "recommended_evidence_types": [
+    "E1"
+   ]
+  },
+  "NoSubmit": {
+   "n_episodes": 7,
+   "base_recovery_rate": 0.1429,
+   "cells": {
+    "E1": {
+     "n_episodes": 7,
+     "n_recovered": 1,
+     "U_recovery": 0.1429,
+     "CI95": [
+      0.0,
+      0.4286
+     ],
+     "avg_episode_llm_cost_est": 30.49,
+     "U_cost": 0.0047
+    },
+    "E2": {
+     "n_episodes": 7,
+     "n_recovered": 1,
+     "U_recovery": 0.1429,
+     "CI95": [
+      0.0,
+      0.4286
+     ],
+     "avg_episode_llm_cost_est": 30.49,
+     "U_cost": 0.0047
+    },
+    "E3": {
+     "n_episodes": 6,
+     "n_recovered": 1,
+     "U_recovery": 0.1667,
+     "CI95": [
+      0.0,
+      0.5
+     ],
+     "avg_episode_llm_cost_est": 28.23,
+     "U_cost": 0.0059
+    },
+    "E4": {
+     "n_episodes": 6,
+     "n_recovered": 1,
+     "U_recovery": 0.1667,
+     "CI95": [
+      0.0,
+      0.5
+     ],
+     "avg_episode_llm_cost_est": 32.91,
+     "U_cost": 0.0051
+    }
+   },
+   "ranking_eligible": [
+    "E3",
+    "E4",
+    "E1",
+    "E2"
+   ],
+   "tiers": {
+    "E3": "HIGH",
+    "E4": "MEDIUM",
+    "E1": "MEDIUM",
+    "E2": "LOW"
+   },
+   "recommended_evidence_types": [
+    "E3"
+   ]
+  }
+ },
+ "global": {
+  "cells": {
+   "E1": {
+    "n_episodes": 57,
+    "n_recovered": 25,
+    "U_recovery": 0.4386,
+    "CI95": [
+     0.3158,
+     0.5614
+    ],
+    "avg_episode_llm_cost_est": 11.83,
+    "U_cost": 0.0371
+   },
+   "E2": {
+    "n_episodes": 42,
+    "n_recovered": 15,
+    "U_recovery": 0.3571,
+    "CI95": [
+     0.2143,
+     0.5238
+    ],
+    "avg_episode_llm_cost_est": 14.0,
+    "U_cost": 0.0255
+   },
+   "E3": {
+    "n_episodes": 49,
+    "n_recovered": 17,
+    "U_recovery": 0.3469,
+    "CI95": [
+     0.2041,
+     0.4898
+    ],
+    "avg_episode_llm_cost_est": 11.88,
+    "U_cost": 0.0292
+   },
+   "E4": {
+    "n_episodes": 11,
+    "n_recovered": 1,
+    "U_recovery": 0.0909,
+    "CI95": [
+     0.0,
+     0.2727
+    ],
+    "avg_episode_llm_cost_est": 23.25,
+    "U_cost": 0.0039
+   }
+  },
+  "ranking_eligible": [
+   "E1",
+   "E2",
+   "E3",
+   "E4"
+  ],
+  "tiers": {
+   "E1": "HIGH",
+   "E2": "MEDIUM",
+   "E3": "MEDIUM",
+   "E4": "LOW"
+  },
+  "recommended_evidence_types": [
+   "E1"
+  ]
+ },
+ "gate_check": {
+  "question": "Do routed failure contexts rank evidence types differently?",
+  "rankings": {
+   "Framework": [
+    "E2",
+    "E1",
+    "E3"
+   ],
+   "Semantic": [
+    "E1",
+    "E2",
+    "E3",
+    "E4"
+   ],
+   "Runtime": [
+    "E1",
+    "E3",
+    "E2"
+   ]
+  },
+  "distinct_rankings": true,
+  "reversal_examples": [
+   "Framework vs Semantic: E2/E1 ordered differently",
+   "Framework vs Runtime: E2/E1 ordered differently",
+   "Semantic vs Runtime: E2/E3 ordered differently"
+  ],
+  "decision": "CONTINUE"
+ }
+}

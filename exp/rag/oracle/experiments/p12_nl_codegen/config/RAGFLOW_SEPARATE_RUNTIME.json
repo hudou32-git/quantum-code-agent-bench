@@ -1,0 +1,28 @@
+{
+  "protocol_note": "Runtime SEPARATE config for formal P12 RAG arms (G3/G4/E2/E3/I2/I3). Aligned with P16_FROZEN_RETRIEVER_CONFIG operational params.",
+  "retriever_architecture": "RAGFLOW_MULTI_DATASET_SEPARATE",
+  "chunk_strategy": "NATIVE",
+  "dataset_ids": {
+    "P14_QISKIT_API_V241": "b9515ff48ff011f1b574ce93c5b96374",
+    "P14_QISKIT_USAGE_RUNTIME_V241": "b95682228ff011f18966ce93c5b96374",
+    "P14_QUANTUM_ALGORITHMS": "b95ae18c8ff011f1a8d8ce93c5b96374"
+  },
+  "per_dataset_k": 3,
+  "top_k_final": 3,
+  "similarity_threshold": 0.1,
+  "vector_similarity_weight": 0.5,
+  "timeout_s": 120.0,
+  "snippet_chars": 900,
+  "reranker": "disabled",
+  "silent_local_fallback": false,
+  "formal_rag_arms": [
+    "G3_RAG",
+    "G4_RAG_PLAN",
+    "E2_RAG_EF",
+    "E3_RAG_PLAN_EF",
+    "I2_RAG_EF_B3",
+    "I3_RAG_PLAN_EF_B3"
+  ],
+  "shuffled_control_arm": "C1_SHUFFLED_RAG",
+  "shuffled_control_note": "C1 uses local KB doc pool for shuffled-context control only; not a formal RAG route."
+}

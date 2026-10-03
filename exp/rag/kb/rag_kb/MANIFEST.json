@@ -1,0 +1,24 @@
+{
+  "source": "/root/cyy/llm_code/qiskit-human-eval/op",
+  "output": "datasets/rag_kb",
+  "kb_dirs": [
+    "RAG_qiskit_api",
+    "RAG_qiskit_recipes",
+    "RAG_qiskit_human_eval_runtime",
+    "RAG_qiskit_human_eval_topics",
+    "RAG_quantum_algorithms"
+  ],
+  "file_counts": {
+    "RAG_qiskit_api": 520,
+    "RAG_qiskit_recipes": 10,
+    "RAG_qiskit_human_eval_runtime": 13,
+    "RAG_qiskit_human_eval_topics": 9,
+    "RAG_quantum_algorithms": 9
+  },
+  "total_md": 561,
+  "notes": [
+    "Primary KB copied from qiskit-human-eval/op (RAGFlow corpus).",
+    "RAG_quantum_algorithms added for Oracle circuit-semantic tasks.",
+    "Use oracle_mvp.rag.retriever for local TF-IDF retrieval (no RAGFlow server required)."
+  ]
+}

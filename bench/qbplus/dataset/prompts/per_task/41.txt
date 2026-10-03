@@ -1,0 +1,13 @@
+I need you to complete the following code. No explanation needed.
+import numpy as np
+from qiskit.circuit import QuantumCircuit
+from qiskit_aer.primitives import Estimator
+from qiskit.primitives import StatevectorSampler as Sampler
+from qiskit.quantum_info import SparsePauliOp
+from scipy.optimize import minimize
+
+def VQE_Z2(param):
+    """
+    Implement a quantum circuit compute the minimum eigenvalue of the Z2 Hamiltonian using the Variational Quantum Eigensolver (VQE) algorithm. 
+    Return the QuantumCircuit without measure.
+    """

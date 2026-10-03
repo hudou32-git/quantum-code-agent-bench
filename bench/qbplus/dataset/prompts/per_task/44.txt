@@ -1,0 +1,7 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumCircuit
+import numpy as np
+def CX_gate_decompose_Clifford() -> QuantumCircuit:
+    """
+    Decompose CX gate into a sequence of local Clifford gates, return the quantum circuit after measure all qubits.
+    """

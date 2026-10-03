@@ -1,0 +1,16 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister
+
+def MAJ_3() ->QuantumCircuit: 
+    """
+        Implement a 3-input quantum Majority (MAJ) gate using CNOT and CCNOT (Toffoli) gates. 
+        The circuit takes as input three qubits:
+            - c_i: the carry bit from the previous stage
+            - b_i: one of the current bits to add
+            - a_i: the other current bit to add
+        The MAJ gate performs the following transformations (reversible logic only):
+            - Output 1: a_i ⊕ b_i 
+            - Output 2: a_i ⊕ c_i 
+            - Output 3: c_{i+1}, the carry-out of the majority function over a_i, b_i, and c_i
+        Return the QuantumCircuit after measure all qubits.
+    """

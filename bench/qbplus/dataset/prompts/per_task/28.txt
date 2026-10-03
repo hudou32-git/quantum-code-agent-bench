@@ -1,0 +1,8 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
+def decompose_CCCNOT() ->QuantumCircuit: 
+    
+    """
+        Implement a 5 qubits quantum circuit, construct a decomposition of the CCCNOT (triple-controlled NOT) gate using CCNOT gate. qubit0, qubit1, and qubit2 act as control qubits, qubit 3 is ancilla qubit, and qubit4 is the target qubit.
+        Return the QuantumCircuit after measure control and target qubits.
+    """

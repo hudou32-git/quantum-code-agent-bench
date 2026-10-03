@@ -1,0 +1,7 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
+def GHZ3_SWAPTEST() ->QuantumCircuit: 
+    
+    """
+        Prepare a 3-qubit GHZ state and compare it with a |+++> state using the SWAP test. Use 3 ancilla qubits and measure ancilla qubits.
+    """

@@ -1,0 +1,6 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumCircuit
+def parity_check_3bit() -> QuantumCircuit:
+    """
+        Construct a quantum circuit to check the parity of a 3-qubit input state and return quantum circuit after measure one qubit
+    """

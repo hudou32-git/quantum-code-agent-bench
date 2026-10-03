@@ -1,0 +1,6 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
+def grover_search_oracle_00() ->QuantumCircuit:
+    """
+        Implement a quantum circuit using grover algorithm to find oracle |00> using qiskit, return the QuantumCircuit after measuring.
+    """

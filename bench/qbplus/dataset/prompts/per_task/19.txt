@@ -1,0 +1,7 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
+def generate_quantum_state_qubit5() ->QuantumCircuit: 
+
+        """
+                implementation a quantum circuit to create the state ψ = √(1/2)(|00110⟩ + |00101⟩) using qiskit, return the QuantumCircuit after measure all qubits.
+        """

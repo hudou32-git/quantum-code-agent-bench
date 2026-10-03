@@ -1,0 +1,7 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister
+
+def GHZ() ->QuantumCircuit: 
+    """
+        Implement a 3 qubits GHZ state quantum circuit, return the QuantumCircuit after measure all qubits. 
+    """

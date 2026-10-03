@@ -1,0 +1,12 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
+def qaoa_maxcut_ansatz(G, beta, gamma) ->QuantumCircuit: 
+
+        """
+                Implement a quantum circuit using QAOA algorithm to solve the maxcut problem with the graph ([[0,3],[0,4],[1,3],[1,4],[2,3],[2,4]]), return the QuantumCircuit after measuring.
+                 Parameters:
+                        G (networkx.Graph): The input graph for MaxCut.
+                        beta (List[float]): A list of 5 parameters for the mixing unitaries (RX rotations).
+                        gamma (List[float]): A list of 5 parameters for the cost unitaries (ZZ rotations).
+                        
+        """

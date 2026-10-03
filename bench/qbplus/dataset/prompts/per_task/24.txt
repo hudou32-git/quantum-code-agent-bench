@@ -1,0 +1,7 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister
+
+def W_State_4() ->QuantumCircuit: 
+    """
+        Implement a 4 qubits W state quantum circuit. Return the QuantumCircuit after measure all qubits. 
+    """

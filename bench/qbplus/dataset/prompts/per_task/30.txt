@@ -1,0 +1,7 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumCircuit
+
+def or_circuit()->QuantumCircuit:
+    """ 
+        Design a or circuit that takes Qubit 0 and Qubit 1 as input and Qubit 3 as result, return the Quantum Circuit after measure Qubit 2.
+    """

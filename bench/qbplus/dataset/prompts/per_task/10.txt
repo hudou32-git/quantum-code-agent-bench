@@ -1,0 +1,25 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister
+import numpy as np
+from qiskit.quantum_info import Statevector
+from scipy.linalg import expm
+from qiskit.circuit.library import UnitaryGate
+from qiskit.circuit.library import QFT
+from qiskit.circuit.library import RYGate
+import math
+
+def HHL_4x4() ->QuantumCircuit: 
+    """
+        Implement a quantum circuit that uses the Harrow-Hassidim-Lloyd (HHL) algorithm to solve a linear system Ax = b,
+        where:
+
+            A = (1/2) * np.array([[3, 0, 0, -1],
+                                [0, 7, -1, 0],
+                                [0, -1, 7, 0],
+                                [-1, 0, 0, 3]])
+
+            b = np.array([1/√2, 1/√2, 0, 0])  # A normalized 4-dim vector
+            t = π/4                            # Evolution time
+            The clock register uses 3 qubits.
+        Return a QuantumCircuit afer measure the solution x.
+    """

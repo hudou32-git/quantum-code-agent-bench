@@ -1,0 +1,8 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
+def qpe_x_gate() ->QuantumCircuit: 
+    
+    """
+        Implement a quantum circuit to perform Quantum Phase Estimation using 3 counting qubits and 1 target qubit to estimate the phase of a unitary operator X (Pauli-X gate).
+        Return a QuantumCircuit and measure the counting qubits.
+    """

@@ -1,0 +1,32 @@
+{
+  "dataset": "RAG_qiskit_human_eval_topics",
+  "qiskit_version": "2.4.1",
+  "purpose": "Topic-focused HumanEval-Qiskit chunks for tasks that scored below similarity_threshold=0.35 against generic Bell/statevector recipes. Upload together with RAG_qiskit_human_eval_runtime and RAG_qiskit_recipes into the same RAGFlow dataset.",
+  "targets": {
+    "basic_circuit": "U gate, compose, registers, measure patterns (avoid wrong Bell-only retrieval)",
+    "quantum_info": "Operator, Statevector, unitary matrix return",
+    "runtime_sampler": "Sampler transpile bitstrings counts (tasks like bell_each_shot)",
+    "cloud_runtime_prompt": "Docstring mentions device/service but eval uses local Fake/Aer",
+    "transpiler_adv": "DAGCircuit, PassManager, non-preset flows",
+    "primitives": "StatevectorSampler when prompt imports qiskit.primitives"
+  },
+  "files": [
+    "heval_topic_basic_circuit_u_gate_and_gates.md",
+    "heval_topic_quantum_info_operator_statevector.md",
+    "heval_topic_runtime_sampler_transpile_measure.md",
+    "heval_topic_local_eval_instead_of_runtime_service.md",
+    "heval_topic_dag_passmanager_transpiler.md",
+    "heval_topic_primitives_statevector_sampler.md",
+    "heval_topic_circuit_compose_registers_measure.md"
+  ],
+  "companion_code_defaults": {
+    "rag_similarity_threshold": 0.2,
+    "rag_page_size": 3,
+    "note": "After ingest, run scripts/vllm/diagnose_rag_recall.py to verify injection rate on full 151 tasks."
+  },
+  "ingestion_notes": [
+    "New folder under op/ — upload all heval_topic_*.md to the same RAGFlow dataset as existing Qiskit docs.",
+    "Chunk by ## headings; keep each chunk well above 80 characters after cleaning.",
+    "Re-ingest or refresh embeddings after upload so similarity scores update."
+  ]
+}

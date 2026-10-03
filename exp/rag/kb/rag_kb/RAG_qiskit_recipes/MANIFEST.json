@@ -1,0 +1,25 @@
+{
+  "dataset": "RAG_qiskit_recipes",
+  "qiskit_version": "2.4.1",
+  "purpose": "Task-style KB chunks to improve RAG recall on multi-step HumanEval-Qiskit prompts (complement op/RAG_qiskit_api single-API pages).",
+  "p0_files": [
+    "recipe_aer_bell_phi_plus_simulation.md",
+    "recipe_transpile_preset_pass_manager.md",
+    "recipe_quantum_circuit_compose_measure_patterns.md"
+  ],
+  "p1_files": [
+    "recipe_statevector_quantum_info_bell.md",
+    "recipe_primitives_estimator_sampler_bell.md",
+    "recipe_fake_provider_machine_names.md",
+    "recipe_no_runtime_service_local_eval.md",
+    "recipe_circuit_library_efficient_su2.md",
+    "recipe_qasm2_export_import.md"
+  ],
+  "ingestion_notes": [
+    "Upload as separate documents or merge into same RAGFlow dataset as RAG_qiskit_api.",
+    "Also ingest sibling folder op/RAG_qiskit_human_eval_runtime/ (runtime Sampler mode= stack).",
+    "Also ingest op/RAG_qiskit_human_eval_topics/ (low-similarity HumanEval topic chunks).",
+    "Chunking: prefer keeping full file or large sections (>80 chars) so empty_or_short_chunk gate passes.",
+    "Re-run ablation after ingest: scripts/vllm/run_qhe_rag_ablation.py"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "filename": ".eqpa_canary",
+  "tokens": {
+    "dataset": "SECRET_CANARY_0a720efe4493ea8a1dc409c1011155e8bdd8d7eeb751331667c6efc0500a5aa9",
+    "sealed": "SECRET_CANARY_4fbb135bcc9a74a8d462053cd6bf12fedd43f831ace0860b3c6d28385cc681a6",
+    "grader": "SECRET_CANARY_88043fe716d012d8e1412f1f4238499e4bcfe403e465247d745a071325fd9bfe"
+  },
+  "paths": {
+    "dataset": "/root/cyy/llm_code/test/bench/qhe/dataset/.eqpa_canary",
+    "sealed": "/root/cyy/llm_code/test/bench/qhe/sealed/.eqpa_canary",
+    "grader": "/root/cyy/llm_code/test/bench/qhe/eval/.eqpa_canary"
+  }
+}

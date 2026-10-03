@@ -1,0 +1,33 @@
+{
+  "dataset": "RAG_qiskit_human_eval_runtime",
+  "qiskit_version": "2.4.1",
+  "qiskit_ibm_runtime_version": "0.45.0",
+  "purpose": "HumanEval-Qiskit evaluation stack: qiskit_ibm_runtime Sampler/Estimator with mode=, AerSimulator, fake_provider machine names, and local execution. Fills gaps in op/RAG_qiskit_api (no runtime narrative) and reduces qiskit.primitives retrieval confusion.",
+  "parent_audit": "op/RAG_qiskit_api/HUMANEVAL_API_DOC_AUDIT.md",
+  "files": [
+    "heval_runtime_sampler_estimator.md",
+    "heval_runtime_results_sampler_options.md",
+    "heval_fake_provider_transpile_pass_manager.md",
+    "heval_aer_simulator_local_no_service.md",
+    "heval_primitives_vs_runtime_import_rules.md",
+    "heval_quantum_circuit_qiskit2_api.md",
+    "heval_estimator_observables.md",
+    "heval_visualization_and_layout.md",
+    "heval_quantum_circuit_patterns.md",
+    "heval_pass_manager_workflows.md",
+    "heval_l2_gate_fallback_cheatsheet.md"
+  ],
+  "deprecated_merge_before_reingest": {
+    "heval_runtime_sampler_estimator_mode.md": "heval_runtime_sampler_estimator.md",
+    "heval_runtime_results_options.md": "heval_runtime_results_sampler_options.md",
+    "heval_primitives_vs_runtime.md": "heval_primitives_vs_runtime_import_rules.md",
+    "heval_aer_local_no_cloud.md": "heval_aer_simulator_local_no_service.md",
+    "heval_fake_provider_transpile.md": "heval_fake_provider_transpile_pass_manager.md"
+  },
+  "ingestion_notes": [
+    "Create or extend the RAGFlow dataset used by --rag-dataset-id (same KB as RAG_qiskit_api + RAG_qiskit_recipes is fine).",
+    "Upload each .md as a document OR merge folder into one document; chunk size should keep sections >= 80 characters after cleaning (see vllm_common empty_or_short_chunk gate).",
+    "Prefer semantic chunking by ## headings; avoid splitting mid code block.",
+    "After ingest, re-run: python scripts/vllm/run_qhe_protocol_ablation.py --only rag --only user_rag ..."
+  ]
+}

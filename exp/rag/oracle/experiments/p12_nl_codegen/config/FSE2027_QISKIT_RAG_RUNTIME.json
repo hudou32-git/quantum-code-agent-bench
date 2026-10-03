@@ -1,0 +1,26 @@
+{
+  "protocol_note": "FSE2027 formal Qiskit RAG: same query across K1/K2/K3, raw RAGFlow score global sort, neural reranker disabled.",
+  "retriever_architecture": "FRAMEWORK_K1K2K3_SAME_QUERY_RAW_SCORE",
+  "chunk_strategy": "NATIVE",
+  "framework": "qiskit",
+  "query_mode": "framework_task_prompt",
+  "dataset_ids": {
+    "qiskit_k1_primary": "488f48c2959911f1946e369799a03512",
+    "qiskit_k2_primary": "523f41d8959911f1a108369799a03512",
+    "qiskit_k3_primary": "552db118959911f18991369799a03512"
+  },
+  "knowledge_layer_by_dataset": {
+    "qiskit_k1_primary": "K1",
+    "qiskit_k2_primary": "K2",
+    "qiskit_k3_primary": "K3"
+  },
+  "per_dataset_k": 3,
+  "top_k_final": 3,
+  "similarity_threshold": 0.1,
+  "vector_similarity_weight": 0.5,
+  "timeout_s": 120.0,
+  "snippet_chars": 900,
+  "reranker": "disabled",
+  "silent_local_fallback": false,
+  "formal_rag_arms": ["G3_RAG", "G4_RAG_PLAN"]
+}

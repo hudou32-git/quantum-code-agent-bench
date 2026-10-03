@@ -1,0 +1,2 @@
+Transpile a bell circuit using pass manager with optimization level as 1, run it using Qiskit Sampler with the Aer simulator as backend and get the execution counts.
+You must implement this using a function named `noisy_bell` with no arguments.

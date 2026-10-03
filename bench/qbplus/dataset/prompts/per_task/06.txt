@@ -1,0 +1,8 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
+def swaptest_zaxis(unknown_state: QuantumCircuit) ->QuantumCircuit: 
+
+    """
+            Implement a quantum circuit using the SWAP test algorithm to estimate the angle θ (in radians) between an unknown single-qubit quantum state and the |0⟩ state (Z-axis).
+            The input is a single qubit QuantumCircuit unknown_state, and returns a QuantumCircuit after measuring the ancilla qubit
+    """

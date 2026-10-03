@@ -1,0 +1,8 @@
+I need you to complete the following code. No explanation needed.
+from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
+def swaptest_individual() ->QuantumCircuit: 
+    
+    """
+        Implement a quantum circuit using the SWAP test with individual ancilla qubits for each qubit-to-qubit comparison between two 3-qubit quantum states: |011⟩ and |000⟩.
+        Encode |011⟩ on the first set of 3 qubits, and |000⟩ on the second set of 3 qubits. Use 3 ancilla qubits and measure ancilla qubits.
+    """

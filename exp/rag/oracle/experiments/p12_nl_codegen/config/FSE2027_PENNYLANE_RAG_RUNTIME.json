@@ -1,0 +1,26 @@
+{
+  "protocol_note": "FSE2027 formal PennyLane RAG: same query across K1/K2/K3, raw RAGFlow score global sort, neural reranker disabled.",
+  "retriever_architecture": "FRAMEWORK_K1K2K3_SAME_QUERY_RAW_SCORE",
+  "chunk_strategy": "NATIVE",
+  "framework": "pennylane",
+  "query_mode": "framework_task_prompt",
+  "dataset_ids": {
+    "pennylane_k1_primary": "6445852c959911f1b91c369799a03512",
+    "pennylane_k2_primary": "6a96e42a959911f1b172369799a03512",
+    "pennylane_k3_primary": "6de439ca959911f188eb369799a03512"
+  },
+  "knowledge_layer_by_dataset": {
+    "pennylane_k1_primary": "K1",
+    "pennylane_k2_primary": "K2",
+    "pennylane_k3_primary": "K3"
+  },
+  "per_dataset_k": 3,
+  "top_k_final": 3,
+  "similarity_threshold": 0.1,
+  "vector_similarity_weight": 0.5,
+  "timeout_s": 120.0,
+  "snippet_chars": 900,
+  "reranker": "disabled",
+  "silent_local_fallback": false,
+  "formal_rag_arms": ["G3_RAG", "G4_RAG_PLAN"]
+}
